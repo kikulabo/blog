@@ -19,7 +19,7 @@ export function ThemeToggle() {
   }
 
   const handleToggle = () => {
-    const currentIndex = themes.indexOf(theme as any);
+    const currentIndex = themes.indexOf(theme as typeof themes[number]);
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);
   };
@@ -28,7 +28,7 @@ export function ThemeToggle() {
     <button
       className={styles.switch}
       onClick={handleToggle}
-      aria-label={`Switch to ${themes[(themes.indexOf(theme as any) + 1) % themes.length]} theme`}
+      aria-label={`Switch to ${themes[(themes.indexOf(theme as typeof themes[number]) + 1) % themes.length]} theme`}
     />
   );
 }
